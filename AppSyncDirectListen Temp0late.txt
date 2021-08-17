@@ -1,0 +1,30 @@
+swiper.setRefreshing(true);
+ AppSyncDirectResponseListen as = new AppSyncDirectResponseListen(this);
+        as.getResponseFromUrl(new AppSyncDirectResponseListen.ResponseListener() {
+            @Override
+            public void responser(String response, String datakey) {
+                if (datakey.equalsIgnoreCase("H889")) {
+                    try {
+			list.clear();
+                        adapter.notifyDataSetChanged();
+                        JSONArray jsonArray = new JSONArray(response);
+                        if (jsonArray.length() > 0) {
+                            for (int i = 0; i < jsonArray.length(); i++) {
+                                JSONObject obj = jsonArray.getJSONObject(i);
+                                String id = String.valueOf(obj.getInt("id"));
+                                String title = obj.getString("title");
+                            }
+                        swiper.setRefreshing(false);
+                        } else {
+//                            Empty
+			AppSyncToast.showToast(getApplicationContext(), "Nothing to show");
+                        swiper.setRefreshing(false);
+                        }
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                        swiper.setRefreshing(false);
+                    }
+                }
+            }
+        });
+        as.getResponseFromUrlMethod(Admin.BASE_URL + "", "H889");

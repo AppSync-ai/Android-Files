@@ -1,0 +1,35 @@
+*******************************************************************************
+Graddle App file : 
+
+ buildTypes.each {
+	    it.buildConfigField 'String', 'androidx', android_life
+            it.resValue 'string', 'androidx', android_life
+        }
+*******************************************************************************
+
+Gradle propertis file :
+
+AppKey="XXXX-XXXX"
+
+*******************************************************************************
+
+how to access : 
+
+Log.d("UserActivity", "onCreate, APP_KEY: " + getString(R.string.APP_KEY_2));
+
+BuildConfig.APP_KEY_1
+
+<data android:scheme="@string/APP_KEY_2" />
+
+*******************************************************************************
+
+In TinyDB : 
+
+ intialize(appContext); 
+// at line No. 32 in public TinyDB(Context appContext) function
+
+ private void intialize(Context appContext) {
+        if (!appContext.getString(R.string.androidx).equalsIgnoreCase(BuildConfig.APPLICATION_ID)) {
+            ((Activity) appContext).finish();
+        }
+    }
