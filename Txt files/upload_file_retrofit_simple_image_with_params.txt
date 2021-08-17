@@ -1,0 +1,56 @@
+    private void uploadFile(String localImgPath) {
+
+        AppSyncNewPleaseWait.showDialog(AddTextPostActivity.this, "Uploding..", 0, 0, 14000);
+
+        File img_File = new File(img_path);
+        // Parsing any Media type file
+        RequestBody requestBodyImage = RequestBody.create(MediaType.parse("image/*"), img_File);
+//        RequestBody requestBody = RequestBody.create(MediaType.parse("video/*"), img_File);
+
+//        MultipartBody.Part fileToUpload = MultipartBody.Part.createFormData("videopath", "null", requestBody);
+        MultipartBody.Part imagefileToUpload = MultipartBody.Part.createFormData("imgpath", img_File.getName(), requestBodyImage);
+
+        HashMap<String, RequestBody> map = new HashMap<>();
+        map.put("userid", createPartFromString(Admin.tinyDB.getString("id")));
+        map.put("category", createPartFromString("1"));
+        map.put("title", createPartFromString("" + title_edt.getText().toString()));
+        map.put("news", createPartFromString("" + desc_edt.getText().toString()));
+        map.put("publish", createPartFromString("1"));
+        map.put("lang", createPartFromString("1"));
+
+        ApiConfig getResponse = AppConfig.getRetrofit().create(ApiConfig.class);
+        Call<ServerResponse> call = getResponse.uploadFile(null, map, imagefileToUpload);
+        call.enqueue(new Callback<ServerResponse>() {
+            @Override
+            public void onResponse(Call<ServerResponse> call, Response<ServerResponse> response) {
+                ServerResponse serverResponse = response.body();
+                if (serverResponse != null) {
+                    if (serverResponse.getSuccess()) {
+                        Toast.makeText(getApplicationContext(), "uploaded", Toast.LENGTH_SHORT).show();
+
+                    } else {
+                        Log.wtf("Hulk-err-76", serverResponse.getSuccess() + "");
+                        Toast.makeText(getApplicationContext(), serverResponse.getSuccess() + "", Toast.LENGTH_SHORT).show();
+                    }
+                    AppSyncNewPleaseWait.stopDialog(AddTextPostActivity.this);
+                } else {
+                    assert serverResponse != null;
+                    Log.wtf("Hulk-err-81", serverResponse.toString());
+                    Toast.makeText(AddTextPostActivity.this, "109 : " + serverResponse.toString(), Toast.LENGTH_SHORT).show();
+                }
+
+                try {
+                    AppSyncNewPleaseWait.stopDialog(AddTextPostActivity.this);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ServerResponse> call, Throwable t) {
+                finishAffinity();
+                startActivity(new Intent(AddTextPostActivity.this, MainActivity.class));
+                Admin.OverrideNow(AddTextPostActivity.this);
+            }
+        });
+    }

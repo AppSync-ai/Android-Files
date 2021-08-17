@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_my_profile"
+            android:icon="@drawable/ic_baseline_account_circle_24"
+            android:title="My Profile" />
+
+        <item
+            android:id="@+id/nav_leaderboard"
+            android:icon="@drawable/ic_baseline_emoji_people_24"
+            android:title="Leaderboard" />
+
+
+        <item
+            android:id="@+id/nav_bookmarked_question"
+            android:icon="@drawable/bookmark"
+            android:title="Bookmarked Questions" />
+
+        <item
+            android:id="@+id/nav_telegram_channel"
+            android:icon="@drawable/ic_baseline_send_24"
+            android:title="Join our Telegram Channel" />
+
+
+        <item
+            android:id="@+id/nav_settings"
+            android:icon="@drawable/ic_baseline_settings_24"
+            android:title="Settings" />
+
+
+        <item
+            android:id="@+id/nav_update"
+            android:icon="@drawable/redo"
+            android:title="Update" />
+
+
+        <item
+            android:id="@+id/nav_more_apps"
+            android:icon="@drawable/categories"
+            android:title="More Apps" />
+
+        <item
+            android:id="@+id/nav_logout"
+            android:icon="@drawable/ic_baseline_logout_24"
+            android:title="Logout" />
+
+
+    </group>
+
+    <item android:title="More info">
+        <menu>
+            <item
+                android:id="@+id/nav_privacy_policy"
+                android:icon="@drawable/ic_baseline_account_circle_24"
+                android:title="Privacy Policy" />
+
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_baseline_share_24"
+                android:title="Share" />
+
+            <item
+                android:id="@+id/nav_rate"
+                android:icon="@drawable/ic_baseline_star_half_24"
+                android:title="Rate Us" />
+
+
+            <item
+                android:id="@+id/nav_info"
+                android:icon="@drawable/ic_baseline_info_24"
+                android:title="About Us" />
+
+
+        </menu>
+    </item>
+
+</menu>

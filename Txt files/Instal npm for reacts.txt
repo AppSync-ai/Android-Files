@@ -1,0 +1,33 @@
+npm install --save react-mdl (for Material Disign like Card, Button)
+npm install --save react-router-dom (for Router and link)
+npm install @material-ui/icons (for material icons)
+npm install @material-ui/core (for material icons)
+npm install @material-ui/styles (for material Styles)
+npm install --save react-firebase (for firebase)
+npm install --save axios (for http requests)
+npm install save copy-to-clipboard (for copy and paste)
+npm add react-toastify (toast library)
+npm install react-date-picker (date picker lib)
+npm install date-fns --save (date formatter for using datepicker)
+
+
+npm install react-slideshow-image -S (for image slider)
+You need to import the css style, you can do that by adding to the js file : 
+import 'react-slideshow-image/dist/styles.css'
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+Then add these lines to src/index.js:
+
+import 'react-mdl/extra/material.css';
+import 'react-mdl/extra/material.js';
+
+
+npx create-react-app
+npm start
+npm run build
+
+for animations :
+https://animate.style/ (for installing)
+https://www.npmjs.com/package/react-animations (for all animation effects)
+https://dbramwell.github.io/react-animate-on-scroll/#install (animation onScrolling)
