@@ -1,0 +1,52 @@
+card : 
+
+<TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:text="Email"
+                        android:textColor="@color/black"
+                        android:textSize="18sp" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/white_card_view"
+                        android:backgroundTint="#DADADA">
+
+                        <EditText
+                            android:id="@+id/email_edt"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@null"
+                            android:editable="false"
+                            android:enabled="false"
+                            android:hint="Email"
+                            android:paddingHorizontal="15dp" />
+
+                    </RelativeLayout>
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+simple :
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:hint="Title">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/title_edt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/new_font"
+                android:inputType="text"
+                android:lines="1"
+                android:maxLength="200"
+                android:singleLine="true" />
+
+        </com.google.android.material.textfield.TextInputLayout>
