@@ -1,0 +1,75 @@
+Essentials Sarkari chakri Admin App : 
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+    <ImageView
+        android:id="@+id/deleteImg"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignParentRight="true"
+        android:layout_margin="10dp"
+        android:clickable="true"
+        android:foreground="?selectableItemBackground"
+        android:src="@drawable/trash" />
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/addBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="15dp"
+        app:srcCompat="@drawable/ic_baseline_add_24" />
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+		Admin.id = blog_list.get(position).getId();
+                Admin.position = position;
+                AppSyncYesNoDialog.showDialog(context, "Are you sure you want to delete " + blog_list.get(position).getCat_title() + "?");
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+        try {
+            Admin.makeItQuery("DELETE" + Admin.id, getApplicationContext());
+            list.remove(Admin.position);
+            adapter.notifyDataSetChanged();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+        findViewById(R.id.addBtn).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(ImportantUpdates.this, AddImportantUpdates.class));
+                Admin.OverrideNow(ImportantUpdates.this);
+            }
+        });
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+        holder.deleteImg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Admin.id = blog_list.get(position).getId();
+                Admin.position = position;
+                AppSyncYesNoDialog.showDialog(context, "Are you sure you want to delete " + blog_list.get(position).getCat_title() + "?");
+            }
+        });
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+SELECT * FROM `Category` where section like '%do%'
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
