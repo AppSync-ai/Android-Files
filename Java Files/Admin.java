@@ -54,9 +54,7 @@ public class Admin {
     }
 
     public static void loadFrag_add_back(Fragment f1, String name, FragmentManager fm) {
-        for (int i = 0; i < fm.getBackStackEntryCount(); ++i) {
-            fm.popBackStack();
-        }
+      
         FragmentTransaction ft = fm.beginTransaction();
         //  ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
         ft.setCustomAnimations(R.anim.fade_in, R.anim.fade_out);
