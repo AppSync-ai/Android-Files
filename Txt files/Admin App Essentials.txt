@@ -73,3 +73,8 @@ Essentials Sarkari chakri Admin App :
 SELECT * FROM `Category` where section like '%do%'
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+  String pers[] = new String[]{Manifest.permission.CAMERA,Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE};
+        AppSyncPermissions.askPermissions(this, pers);
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
