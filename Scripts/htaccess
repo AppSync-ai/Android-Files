@@ -1,0 +1,10 @@
+options +FollowSymLinks -Indexes
+
+RewriteEngine on
+RewriteBase /Other/vedbrothers/
+
+#RewriteCond %{HTTP_HOST} !^admin [NC]
+#RewriteRule .* - [F]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^all_apis/?$ all_apis.php [L]
