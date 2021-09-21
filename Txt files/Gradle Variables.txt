@@ -1,13 +1,15 @@
 *******************************************************************************
 Graddle App file : 
 
- buildTypes.each {
-	    it.buildConfigField 'String', 'androidx', android_life
+  buildTypes.each {
+            it.buildConfigField 'String', 'androidx', android_life
             it.resValue 'string', 'androidx', android_life
+            it.buildConfigField 'String', 'android_name', android_name
+            it.resValue 'string', 'android_name', android_name
         }
 *******************************************************************************
 
-Gradle propertis file :
+Gradle.propertis file :
 
 AppKey="XXXX-XXXX"
 
@@ -32,4 +34,11 @@ In TinyDB :
         if (!appContext.getString(R.string.androidx).equalsIgnoreCase(BuildConfig.APPLICATION_ID)) {
             ((Activity) appContext).finish();
         }
+  	if (!appContext.getString(R.string.app_name).equalsIgnoreCase(BuildConfig.android_name)) {
+            ((Activity) appContext).finish();
+        }
     }
+
+*******************************************************************************
+
+make pkg and app name same
