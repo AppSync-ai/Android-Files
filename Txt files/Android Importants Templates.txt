@@ -54,6 +54,37 @@ Dialog XML :
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
+AppSyncDirect For Fragment
+
+  AppSyncNewPleaseWait.showDialog(getActivity(), "Loading..", 0, 0, 5000);
+        AppSyncDirectResponseListen as = new AppSyncDirectResponseListen(getActivity());
+        as.getResponseFromUrl(new AppSyncDirectResponseListen.ResponseListener() {
+            @Override
+            public void responser(String response, String datakey) {
+                if (datakey.equalsIgnoreCase("EEE34")) {
+                    try {
+                        JSONArray jsonArray = new JSONArray(response);
+                        if (jsonArray.length() > 0) {
+//                            data available
+				   for (int i=0; i<jsonArray.length(); i++)
+                            {
+                                JSONObject obj = jsonArray.getJSONObject(i);
+                                String id = obj.getString("id");
+                            }
+                            AppSyncNewPleaseWait.stopDialog(getActivity());
+                        } else {
+//                            No data available
+                            AppSyncNewPleaseWait.stopDialog(getActivity());
+                        }
+                    } catch (Exception c) {
+                        AppSyncNewPleaseWait.stopDialog(getActivity());
+                        Log.wtf("Hulk-" + datakey, c.getMessage());
+                    }
+                }
+            }
+        });
+        as.getResponseFromUrlMethod(Admin.BASE_URL + "", "EEE34");
+
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
