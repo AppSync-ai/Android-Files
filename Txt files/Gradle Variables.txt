@@ -11,8 +11,8 @@ Graddle App file :
 
 Gradle.propertis file :
 
-AppKey="XXXX-XXXX"
-
+android_life=""
+android_name=""
 *******************************************************************************
 
 how to access : 
