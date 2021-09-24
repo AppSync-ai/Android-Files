@@ -15,22 +15,8 @@ __
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-*Tulsi Agri*
 
-*- Driver name and mobile in todays deals in agent app* ✅
-__
 
-*- Change contact us number in farmer app* ✅
-__
-
-*- Back date entry and gatepass creation in staff app* ✅
-__
-
-*- Goods to be sold after 4 days, option to select date in today lots in staff app* ✅
-__
-
-*- Staff logins delete / block system in staff app* ✅
-__
 
 *- Claim deduction in staff app in phase 3 in staff app* ✅
 __
@@ -38,65 +24,11 @@ __
 *- update claim deduction in excel files in staff app* ✅
 __
 
-*- admin items pc wise in staff app* ✅
-__
-
 *- Excel report of agents Todays deals and Updates in staff app* ✅
-__
-
-*- Delete staff option in staff app* ✅
-__
-
-*- Update admin items option in staff app* ✅
 __
 
 *- Tulsiagri Crops serial setup in staff app* ✅
 __
 
-*- Show farmers crop data in staff app* ✅
-__
-
-*- report of agents added farmers in staff app* ✅
-__
-
-*- Show directory names and mobile number category wise in staff app* ✅
-__
-
-*- Show excetra statements* ✅
-_this requirement is not clear_
-
-*- Farmers Document locker details in staff app* ✅
-__
-
-*- Agents todays deals conversion to gatepass directly* ✅
-_not possible_
-
-*- show alert of missing information in profile of farmer while creating gatepass in staff app* ✅
-__
-
-*- Auto weight calculation after adding bags (*50) in agent app in Todays deal* ✅
-__
-
-*- Agent can add local transport in agent app* ✅
-__
-
-*- Agent can add in directory in angent app* ✅
-__
-
-*- add Document Locker in Transport* ✅
-_cannot be added_
-
-*- connect farmer app to whatsapp* ✅
-_this requirement is not clear_
-
-*- Language selection in farmers app* ✅
-_already done_
-
 *- Update farmer app on Google playstore to latest version* ✅
 _version code 6_
-
-*- * ✅
-__
-
-*- * ✅
-__
