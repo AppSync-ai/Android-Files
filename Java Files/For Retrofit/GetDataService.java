@@ -8,4 +8,9 @@ public interface GetDataService {
 
     @GET("api/anouncment")
     Call<String> get_anouncements();
+
+	@POST("api/bidHistory")
+	@FormUrlEncoded
+	Call<String> get_bid_history(@Field("userid") String userid);
+
 }
