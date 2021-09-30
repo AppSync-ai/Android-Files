@@ -1,0 +1,18 @@
+  GetDataService service = RetrofitClientInstance.getRetrofitInstance().create(GetDataService.class);
+        Call<String> call = service.get_anouncements();
+        call.enqueue(new Callback<String>() {
+            @Override
+            public void onResponse(Call<String> call, Response<String> response) {
+
+                if (response.isSuccessful()) {
+                    wtf("Hulk-117", response.body());
+                } else {
+                    wtf("Hulk-120", "No successful");
+                }
+            }
+
+            @Override
+            public void onFailure(Call<String> call, Throwable t) {
+                wtf("Hulk-124-err", t.getMessage());
+            }
+        });
