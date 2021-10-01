@@ -19,9 +19,7 @@ __
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-
-*- Farmer app clear photo in farmer app* ✅
-__
+*Tulsi Agri*
 
 *- Claim deduction in staff app in phase 3 in staff app* ✅
 __
@@ -30,9 +28,6 @@ __
 __
 
 *- Excel report of agents Todays deals and Updates in staff app* ✅
-__
-
-*- Tulsiagri Crops serial setup in staff app* ✅
 __
 
 *- Update farmer app on Google playstore to latest version* ✅
