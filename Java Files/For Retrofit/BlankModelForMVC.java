@@ -1,14 +1,13 @@
-package com.mt.spingamer.Models;
+package com.example.mvc.Model;
 
 import static android.util.Log.wtf;
-import static com.mt.spingamer.AllModules.Admin.service;
 
 import android.util.Log;
 
 import androidx.lifecycle.MutableLiveData;
 
-import com.mt.spingamer.AllModules.Admin;
-import com.mt.spingamer.AllReqs.AllOffersReq;
+import com.example.mvc.Modules.GetDataService;
+import com.example.mvc.Modules.RetrofitClientInstance;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -21,13 +20,14 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 
-public class BlankModel {
+public class ModelBlank {
 
     public static MutableLiveData<String> response_data = new MutableLiveData<>();
     public static ArrayList<String> list = new ArrayList<>();
 
     public static void load() {
-        Call<String> call = service.get_offerwall(Admin.tinyDB.getString("userid"));
+        GetDataService service = RetrofitClientInstance.getRetrofitInstance().create(GetDataService.class);
+        Call<String> call = service.get_anouncements();
         call.enqueue(new Callback<String>() {
             @Override
             public void onResponse(Call<String> call, Response<String> response) {
@@ -66,3 +66,4 @@ public class BlankModel {
     }
 
 }
+
