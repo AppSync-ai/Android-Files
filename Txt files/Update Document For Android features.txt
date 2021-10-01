@@ -24,9 +24,6 @@ __
 *- Excel report of farmer crops in staff app* ✅
 __
 
-*- organic checkbox in farmer app while adding crops* ✅
-__
-
 *- Claim deduction in staff app in phase 3 in staff app* ✅
 __
 
