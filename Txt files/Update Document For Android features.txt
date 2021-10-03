@@ -21,9 +21,6 @@ __
 
 *Tulsi Agri*
 
-*- Excel report of farmer crops in staff app* ✅
-__
-
 *- Claim deduction in staff app in phase 3 in staff app* ✅
 __
 
