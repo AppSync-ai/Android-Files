@@ -26,6 +26,8 @@ public class BlankModelVersion2 {
     public static ArrayList<String> list = new ArrayList<>();
 
     public BlankModelVersion2 load() {
+GetDataService service = RetrofitClientInstance.getRetrofitInstance().create(GetDataService.class);
+
         Call<String> call = service.get_offerwall(Admin.tinyDB.getString("userid"));
         call.enqueue(new Callback<String>() {
             @Override
