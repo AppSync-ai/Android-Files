@@ -21,6 +21,7 @@ public class ModelBanners {
     public static MutableLiveData<BannersReq> response_data = new MutableLiveData<>();
 
     public static void load() {
+		GetDataService service = RetrofitClientInstanceGson.getRetrofitInstance().create(GetDataService.class);
         Call<String> call = service.get_socials_v2();
         call.enqueue(new Callback<String>() {
             @Override
