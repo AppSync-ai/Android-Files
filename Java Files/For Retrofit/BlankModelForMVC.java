@@ -1,13 +1,10 @@
-package com.example.mvc.Model;
+package com.teamup.matka.Models;
 
 import static android.util.Log.wtf;
 
 import android.util.Log;
 
 import androidx.lifecycle.MutableLiveData;
-
-import com.example.mvc.Modules.GetDataService;
-import com.example.mvc.Modules.RetrofitClientInstance;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -20,7 +17,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 
-public class ModelBlank {
+public class BlankModelForMVC {
 
     public static MutableLiveData<String> response_data = new MutableLiveData<>();
     public static ArrayList<String> list = new ArrayList<>();
@@ -32,7 +29,7 @@ public class ModelBlank {
             @Override
             public void onResponse(Call<String> call, Response<String> response) {
                 if (response.isSuccessful()) {
-                    response_data.setValue(response.body());
+
                     try {
                         list.clear();
                         JSONArray jsonArray = new JSONObject(response.body()).getJSONArray("result");
@@ -45,7 +42,7 @@ public class ModelBlank {
 //                                Add To list
 
                             }
-
+                            response_data.setValue(response.body());
                         } else {
 //                            No data available
                         }
