@@ -21,6 +21,9 @@ __
 
 *Tulsi Agri*
 
+*- NCDEX and MCX API Updates* ✅
+__
+
 *- Claim deduction in staff app in phase 3 in staff app* ✅
 __
 
@@ -32,3 +35,12 @@ __
 
 *- Update farmer app on Google playstore to latest version* ✅
 _version code 6_
+
+
+Avainash Bihani 
+
+Cotton Cake
+cattle feed
+
+
+
