@@ -23,16 +23,16 @@ public class ModelBlank {
             @Override
             public void onResponse(Call<String> call, Response<String> response) {
                 try {
-                    wtf("Hulk-widow-34", response.body());
+				response_data.setValue(response.body());
                 } catch (Exception e) {
-                    wtf("Hulk-widow-29", e.getMessage());
+                   wtf("Hulk-" + getClass().getSimpleName() + "-" + Admin.getLineNumber(), ""+t);
                     message.setValue("No data to show");
                 }
             }
 
             @Override
             public void onFailure(Call<String> call, Throwable t) {
-                wtf("Hulk-widow-38", t);
+                wtf("Hulk-" + getClass().getSimpleName() + "-" + Admin.getLineNumber(), ""+t);
                 message.setValue("Failed to load data");
             }
         });
