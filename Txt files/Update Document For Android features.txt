@@ -14,11 +14,12 @@ __
 *Sarkari Chakri*
 
 *- Category editing is not working in admin app* ✅
-__
+_updated_
 
 *- video adding in first category is not working in admin app* ✅
-__
+_updated_
 
+Admin App :
 
 
 *Ved Brother*
