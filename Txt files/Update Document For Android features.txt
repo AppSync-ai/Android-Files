@@ -11,6 +11,13 @@ __
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+*Sarkari Chakri*
+
+*- Category editing is not working in admin app* ✅
+__
+
+*- video adding in first category is not working in admin app* ✅
+__
 
 
 
