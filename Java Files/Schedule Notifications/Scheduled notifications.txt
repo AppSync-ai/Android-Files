@@ -1,0 +1,56 @@
+<receiver android:name=".activity.NotificationPublisher" />
+
+
+scheduleNotification(getNotification("10 second delay"), 20000);
+
+
+
+
+
+
+   private void scheduleNotification(Notification notification, int delay) {
+
+        Intent notificationIntent = new Intent(this, NotificationPublisher.class);
+        notificationIntent.putExtra(NotificationPublisher.NOTIFICATION_ID, 1);
+        notificationIntent.putExtra(NotificationPublisher.NOTIFICATION, notification);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 0, notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+
+        long futureInMillis = SystemClock.elapsedRealtime() + delay;
+        AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+        alarmManager.set(AlarmManager.ELAPSED_REALTIME_WAKEUP, futureInMillis, pendingIntent);
+    }
+
+
+
+
+
+
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    private Notification getNotification(String content) {
+
+
+        Uri uri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
+
+        String CHANNEL_ID = "MYCHANNEL";
+        NotificationChannel notificationChannel = new NotificationChannel(CHANNEL_ID, "name", NotificationManager.IMPORTANCE_DEFAULT);
+
+        Notification notification = new Notification.Builder(HomeActivity.this, CHANNEL_ID)
+                .setContentText("Scheduled Notification")
+                .setContentTitle("Scheduled Notification")
+                .setDefaults(Notification.DEFAULT_ALL)
+                .setSound(uri)
+//                .addAction(android.R.drawable.sym_action_chat,"Title",pendingIntent)
+                .setChannelId(CHANNEL_ID)
+                .setSmallIcon(R.drawable.logo)
+                .build();
+
+        NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+        notificationManager.createNotificationChannel(notificationChannel);
+        notificationManager.notify(1, notification);
+
+        return notification;
+    }
+
+
+
+
