@@ -8,7 +8,7 @@ scheduleNotification(getNotification("10 second delay", "Notification descriptio
 
 
 
-   private void scheduleNotification(Notification notification, int delay) {
+    private void scheduleNotification(Notification notification, int delay) {
 
         Intent notificationIntent = new Intent(this, NotificationPublisher.class);
         notificationIntent.putExtra(NotificationPublisher.NOTIFICATION_ID, 1);
@@ -24,8 +24,7 @@ scheduleNotification(getNotification("10 second delay", "Notification descriptio
 
 
 
-
-       @RequiresApi(api = Build.VERSION_CODES.O)
+          @RequiresApi(api = Build.VERSION_CODES.O)
     private Notification getNotification(String title, String description) {
 
         Uri uri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
@@ -33,21 +32,20 @@ scheduleNotification(getNotification("10 second delay", "Notification descriptio
         String CHANNEL_ID = "MYCHANNEL";
         NotificationChannel notificationChannel = new NotificationChannel(CHANNEL_ID, "name", NotificationManager.IMPORTANCE_DEFAULT);
 
-        Notification notification = new Notification.Builder(HomeActivity.this, CHANNEL_ID)
+        Notification.Builder notification = new Notification.Builder(HomeActivity.this, CHANNEL_ID)
                 .setContentText(title)
                 .setContentTitle(description)
                 .setDefaults(Notification.DEFAULT_ALL)
                 .setSound(uri)
 //                .addAction(android.R.drawable.sym_action_chat,"Title",pendingIntent)
                 .setChannelId(CHANNEL_ID)
-                .setSmallIcon(R.drawable.logo)
-                .build();
+                .setSmallIcon(R.drawable.original);
 
         NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
         notificationManager.createNotificationChannel(notificationChannel);
-        notificationManager.notify(1, notification);
+//        notificationManager.notify(1, notification);
 
-        return notification;
+        return notification.build();
     }
 
 
