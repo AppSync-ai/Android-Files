@@ -1,7 +1,7 @@
 <receiver android:name=".activity.NotificationPublisher" />
 
 
-scheduleNotification(getNotification("10 second delay"), 20000);
+scheduleNotification(getNotification("10 second delay", "Notification description"), 20000);
 
 
 
@@ -25,9 +25,8 @@ scheduleNotification(getNotification("10 second delay"), 20000);
 
 
 
-    @RequiresApi(api = Build.VERSION_CODES.O)
-    private Notification getNotification(String content) {
-
+       @RequiresApi(api = Build.VERSION_CODES.O)
+    private Notification getNotification(String title, String description) {
 
         Uri uri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
 
@@ -35,8 +34,8 @@ scheduleNotification(getNotification("10 second delay"), 20000);
         NotificationChannel notificationChannel = new NotificationChannel(CHANNEL_ID, "name", NotificationManager.IMPORTANCE_DEFAULT);
 
         Notification notification = new Notification.Builder(HomeActivity.this, CHANNEL_ID)
-                .setContentText("Scheduled Notification")
-                .setContentTitle("Scheduled Notification")
+                .setContentText(title)
+                .setContentTitle(description)
                 .setDefaults(Notification.DEFAULT_ALL)
                 .setSound(uri)
 //                .addAction(android.R.drawable.sym_action_chat,"Title",pendingIntent)
@@ -50,7 +49,6 @@ scheduleNotification(getNotification("10 second delay"), 20000);
 
         return notification;
     }
-
 
 
 
