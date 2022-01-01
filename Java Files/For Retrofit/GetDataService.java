@@ -1,8 +1,4 @@
-<<<<<<< Updated upstream
-package com.navo.agri.Models;
-=======
-package com.example.mvc.Modules;
->>>>>>> Stashed changes
+
 
 import okhttp3.ResponseBody;
 import retrofit2.Call;
