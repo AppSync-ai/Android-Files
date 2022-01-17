@@ -4,14 +4,20 @@ include 'DatabaseConfig.php' ;
  
  $con = mysqli_connect($HostName,$HostUser,$HostPass,$DatabaseName);
  
- $query = $_POST['query'];
+ $query = $_REQUEST['query'];
+ $code = $_REQUEST['code'];
 
  $Sql_Query = $query;
  
  if(mysqli_query($con,$Sql_Query)){
  
- echo 'Data Submit Successfully';
- 
+         if($code != null)
+         {
+            echo $code;
+         }
+         else {
+             echo 'Data submited successfully';
+         }
  }
  else{
  
