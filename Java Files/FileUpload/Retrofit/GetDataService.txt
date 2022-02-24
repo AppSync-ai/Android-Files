@@ -1,0 +1,13 @@
+add this in GetDataService.java
+
+ @Multipart
+    @POST("android_file_upload.php")
+    Call<ServerResponse> uploadFile(@Part MultipartBody.Part file,
+                                    @Part("file") RequestBody name);
+
+
+Library for multipart : 
+//    for multipart
+    implementation "org.apache.httpcomponents:httpmime:4.3"
+
+
