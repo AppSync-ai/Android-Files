@@ -13,10 +13,10 @@ include 'DatabaseConfig.php' ;
  
          if($code != null)
          {
-            echo $code;
+            echo $code .' - '. $con->insert_id;
          }
          else {
-             echo 'Data submited successfully';
+             echo 'Data submited successfully - '.$con->insert_id;
          }
  }
  else{
